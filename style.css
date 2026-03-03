@@ -127,7 +127,7 @@ header h1 a:hover {
     line-height: 1.3;
 }
 
-.sidebar nav ul li a:hover {
+.sidebar nav ul li:hover a {
     background: var(--color-sidebar-active);
     text-decoration: none;
     color: var(--color-text);
@@ -152,6 +152,10 @@ header h1 a:hover {
 
 .sidebar nav ul li.active .sidebar-date {
     padding-left: 1.25rem;
+}
+
+.sidebar nav ul li:hover .sidebar-date {
+    color: var(--color-text);
 }
 
 /* ===== Main Content ===== */
