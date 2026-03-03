@@ -118,24 +118,39 @@ header h1 a:hover {
 .sidebar nav ul li a {
     display: block;
     padding: 0.5rem 1.25rem;
-    font-family: var(--font-heading);
-    font-size: 0.9rem;
-    color: var(--color-text);
     text-decoration: none;
     border-left: 3px solid transparent;
     transition: background 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+}
+
+.post-link {
+    display: flex;
+    flex-direction: column;
+}
+
+.post-title {
+    display: block;
+    font-family: var(--font-heading);
+    font-size: 0.9rem;
+    color: var(--color-text);
     line-height: 1.3;
 }
 
 .sidebar nav ul li:hover a {
     background: #ede9e4;
     text-decoration: none;
+}
+
+.sidebar nav ul li:hover a .post-title {
     color: var(--color-text);
 }
 
 .sidebar nav ul li.active a {
     border-left-color: var(--color-accent);
     background: transparent;
+}
+
+.sidebar nav ul li.active a .post-title {
     font-weight: 600;
     color: var(--color-accent);
 }
@@ -146,12 +161,11 @@ header h1 a:hover {
     font-size: 0.7rem;
     color: var(--color-muted);
     margin-top: 0.1rem;
-    padding-left: 1.25rem;
     padding-bottom: 0.25rem;
 }
 
 .sidebar nav ul li.active .sidebar-date {
-    padding-left: 1.25rem;
+    /* Keep muted color for active state too */
 }
 
 .sidebar nav ul li:hover .sidebar-date {
