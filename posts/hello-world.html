@@ -8,56 +8,81 @@
 </head>
 <body>
     <header>
-        <div class="container">
+        <div class="header-inner">
             <h1><a href="../index.html">Quinn's Blog</a></h1>
             <p class="tagline">Thoughts from Bozeman, MT</p>
         </div>
     </header>
 
-    <main class="container">
-        <a href="../index.html" class="back-link">Back to all posts</a>
+    <div class="layout">
+        <!-- ===== Left Sidebar ===== -->
+        <aside class="sidebar">
+            <nav>
+                <h2>Posts</h2>
+                <ul>
+                    <li class="active"><a href="../index.html">Hello World</a><span class="sidebar-date">Mar 3, 2026</span></li>
+                </ul>
+            </nav>
+        </aside>
 
-        <article class="post-content">
-            <p class="post-meta">March 3, 2026</p>
-            <h2>Hello World</h2>
+        <!-- ===== Main Content ===== -->
+        <main class="main-content">
+            <article class="post-content">
+                <p class="post-meta">March 3, 2026</p>
+                <h2>Hello World</h2>
 
-            <p>
-                Welcome to my blog! I've been meaning to start writing for a while now,
-                and I finally decided to just do it. No fancy frameworks, no complicated
-                build tools — just plain HTML and CSS hosted for free on GitHub Pages.
-            </p>
+                <p>
+                    Welcome to my blog! I've been meaning to start writing for a while now,
+                    and I finally decided to just do it. No fancy frameworks, no complicated
+                    build tools — just plain HTML and CSS hosted for free on GitHub Pages.
+                </p>
 
-            <p>
-                I'm based in Bozeman, Montana, and I plan to write about whatever catches
-                my interest: tech, life in the mountains, projects I'm working on, things
-                I'm learning. Nothing too serious, nothing too polished — just honest
-                thoughts put out into the world.
-            </p>
+                <p>
+                    I'm based in Bozeman, Montana, and I plan to write about whatever catches
+                    my interest: tech, life in the mountains, projects I'm working on, things
+                    I'm learning. Nothing too serious, nothing too polished — just honest
+                    thoughts put out into the world.
+                </p>
 
-            <h3>Why keep it simple?</h3>
+                <h3>Why keep it simple?</h3>
 
-            <p>
-                There are a million blogging platforms out there, but most of them come with
-                strings attached — subscriptions, algorithms, ads, lock-in. A static HTML
-                site is:
-            </p>
+                <p>
+                    There are a million blogging platforms out there, but most of them come with
+                    strings attached — subscriptions, algorithms, ads, lock-in. A static HTML
+                    site is:
+                </p>
 
-            <ul>
-                <li><strong>Free forever</strong> — GitHub Pages costs nothing</li>
-                <li><strong>Fast</strong> — no database, no server-side rendering, just files</li>
-                <li><strong>Indestructible</strong> — it'll work as long as the web exists</li>
-                <li><strong>Totally mine</strong> — no platform can take it away</li>
-            </ul>
+                <ul>
+                    <li><strong>Free forever</strong> — GitHub Pages costs nothing</li>
+                    <li><strong>Fast</strong> — no database, no server-side rendering, just files</li>
+                    <li><strong>Indestructible</strong> — it'll work as long as the web exists</li>
+                    <li><strong>Totally mine</strong> — no platform can take it away</li>
+                </ul>
 
-            <p>
-                If you're reading this, thanks for stopping by. More posts coming soon.
-            </p>
-        </article>
-    </main>
+                <p>
+                    If you're reading this, thanks for stopping by. More posts coming soon.
+                </p>
+            </article>
+        </main>
+    </div>
 
     <footer>
-        <div class="container">
-            <p>&copy; 2026 Quinn's Blog. Hosted free on GitHub Pages.</p>
+        <div class="footer-inner">
+            <div class="social-links">
+                <a href="https://github.com/quinnlue" target="_blank" rel="noopener" title="GitHub">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+                </a>
+                <a href="mailto:luequinn@gmail.com" title="Email">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 4L12 13 2 4"/></svg>
+                </a>
+                <a href="https://github.com/quinnlue/resume/blob/main/quinn_lue_resume.pdf" target="_blank" rel="noopener" title="Resume">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+                </a>
+                <a href="https://x.com/QuinnLue__" target="_blank" rel="noopener" title="X / Twitter">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                </a>
+            </div>
+            <p>&copy; 2026 Quinn's Blog</p>
         </div>
     </footer>
 </body>

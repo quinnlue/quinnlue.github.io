@@ -14,9 +14,11 @@
     --color-border: #e7e5e4;
     --color-header-bg: #1c1917;
     --color-header-text: #fafaf9;
+    --color-sidebar-bg: #f5f5f4;
+    --color-sidebar-active: #e7e5e4;
     --font-body: 'Georgia', 'Times New Roman', serif;
     --font-heading: system-ui, -apple-system, 'Segoe UI', sans-serif;
-    --max-width: 680px;
+    --sidebar-width: 240px;
 }
 
 body {
@@ -28,13 +30,6 @@ body {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-}
-
-.container {
-    max-width: var(--max-width);
-    margin: 0 auto;
-    padding: 0 1.5rem;
-    width: 100%;
 }
 
 /* ===== Links ===== */
@@ -53,13 +48,18 @@ a:hover {
 header {
     background: var(--color-header-bg);
     color: var(--color-header-text);
-    padding: 2.5rem 0;
-    margin-bottom: 3rem;
+    padding: 2rem 0;
+}
+
+.header-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 2rem;
 }
 
 header h1 {
     font-family: var(--font-heading);
-    font-size: 2rem;
+    font-size: 1.75rem;
     font-weight: 700;
     letter-spacing: -0.02em;
 }
@@ -77,59 +77,93 @@ header h1 a:hover {
 
 .tagline {
     color: #a8a29e;
-    font-size: 1rem;
-    margin-top: 0.25rem;
+    font-size: 0.95rem;
+    margin-top: 0.2rem;
     font-style: italic;
 }
 
-/* ===== Post List (Homepage) ===== */
-.post-list {
+/* ===== Layout: Sidebar + Main ===== */
+.layout {
     display: flex;
-    flex-direction: column;
-    gap: 2.5rem;
+    flex: 1;
+    max-width: 1100px;
+    margin: 0 auto;
+    width: 100%;
 }
 
-.post-preview {
-    padding-bottom: 2.5rem;
-    border-bottom: 1px solid var(--color-border);
+/* ===== Sidebar ===== */
+.sidebar {
+    width: var(--sidebar-width);
+    min-width: var(--sidebar-width);
+    background: var(--color-sidebar-bg);
+    border-right: 1px solid var(--color-border);
+    padding: 1.5rem 0;
 }
 
-.post-preview:last-child {
-    border-bottom: none;
-}
-
-.post-preview time {
+.sidebar nav h2 {
     font-family: var(--font-heading);
-    font-size: 0.85rem;
-    color: var(--color-muted);
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-}
-
-.post-preview h2 {
-    font-family: var(--font-heading);
-    font-size: 1.5rem;
+    font-size: 0.75rem;
     font-weight: 600;
-    margin: 0.3rem 0 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--color-muted);
+    padding: 0 1.25rem;
+    margin-bottom: 0.75rem;
+}
+
+.sidebar nav ul {
+    list-style: none;
+}
+
+.sidebar nav ul li a {
+    display: block;
+    padding: 0.5rem 1.25rem;
+    font-family: var(--font-heading);
+    font-size: 0.9rem;
+    color: var(--color-text);
+    text-decoration: none;
+    border-left: 3px solid transparent;
+    transition: background 0.15s ease, border-color 0.15s ease;
     line-height: 1.3;
 }
 
-.post-preview h2 a {
+.sidebar nav ul li a:hover {
+    background: var(--color-sidebar-active);
+    text-decoration: none;
     color: var(--color-text);
 }
 
-.post-preview h2 a:hover {
+.sidebar nav ul li.active a {
+    border-left-color: var(--color-accent);
+    background: var(--color-sidebar-active);
+    font-weight: 600;
     color: var(--color-accent);
 }
 
-.post-preview p {
+.sidebar-date {
+    display: block;
+    font-family: var(--font-heading);
+    font-size: 0.7rem;
     color: var(--color-muted);
-    font-size: 1rem;
+    margin-top: 0.1rem;
+    padding-left: 1.25rem;
+    padding-bottom: 0.25rem;
+}
+
+.sidebar nav ul li.active .sidebar-date {
+    padding-left: 1.25rem;
+}
+
+/* ===== Main Content ===== */
+.main-content {
+    flex: 1;
+    min-width: 0;
+    padding: 2.5rem 3rem;
 }
 
 /* ===== Single Post Page ===== */
 .post-content {
-    margin-bottom: 3rem;
+    max-width: 680px;
 }
 
 .post-content .post-meta {
@@ -138,7 +172,7 @@ header h1 a:hover {
     color: var(--color-muted);
     text-transform: uppercase;
     letter-spacing: 0.05em;
-    margin-bottom: 1rem;
+    margin-bottom: 0.75rem;
 }
 
 .post-content h2 {
@@ -208,23 +242,42 @@ header h1 a:hover {
     color: inherit;
 }
 
-.back-link {
-    display: inline-block;
-    margin-bottom: 2rem;
-    font-family: var(--font-heading);
-    font-size: 0.9rem;
-}
-
-.back-link::before {
-    content: "\2190\00a0";
-}
-
 /* ===== Footer ===== */
 footer {
-    margin-top: auto;
-    padding: 2rem 0;
     border-top: 1px solid var(--color-border);
+    padding: 1.5rem 0;
     text-align: center;
+}
+
+.footer-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 1.25rem;
+    margin-bottom: 0.75rem;
+}
+
+.social-links a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    color: var(--color-muted);
+    background: var(--color-sidebar-bg);
+    transition: color 0.2s ease, background 0.2s ease;
+}
+
+.social-links a:hover {
+    color: var(--color-accent);
+    background: var(--color-sidebar-active);
+    text-decoration: none;
 }
 
 footer p {
@@ -234,22 +287,49 @@ footer p {
 }
 
 /* ===== Responsive ===== */
-@media (max-width: 600px) {
+@media (max-width: 768px) {
+    .layout {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        min-width: 100%;
+        border-right: none;
+        border-bottom: 1px solid var(--color-border);
+        padding: 1rem 0;
+    }
+
+    .sidebar nav h2 {
+        padding: 0 1rem;
+    }
+
+    .sidebar nav ul li a {
+        padding: 0.4rem 1rem;
+        border-left: none;
+        border-bottom: 2px solid transparent;
+    }
+
+    .sidebar nav ul li.active a {
+        border-left: none;
+        border-bottom-color: var(--color-accent);
+    }
+
+    .sidebar-date {
+        display: inline;
+        padding-left: 0.5rem;
+    }
+
+    .main-content {
+        padding: 1.5rem 1.25rem;
+    }
+
     body {
         font-size: 16px;
     }
 
-    header {
-        padding: 1.5rem 0;
-        margin-bottom: 2rem;
-    }
-
     header h1 {
         font-size: 1.5rem;
-    }
-
-    .post-preview h2 {
-        font-size: 1.25rem;
     }
 
     .post-content h2 {
